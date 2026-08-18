@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/hikizan-app/sw.js', { scope: '/hikizan-app/' })})}

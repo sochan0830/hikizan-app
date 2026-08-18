@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/hikizan-app/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ひきざんマスター！</title>
+    <!-- Google Fonts for a friendly look -->
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/hikizan-app/assets/index-CY3enIQr.js"></script>
+  <link rel="stylesheet" crossorigin href="/hikizan-app/assets/index-Cb26sNcv.css">
+<link rel="manifest" href="/hikizan-app/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/hikizan-app/registerSW.js"></script></head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1>ひきざんマスター！</h1>
+        </header>
+
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen">
+            <div class="character-container">
+                <img src="assets/seal.png" alt="かわいいアザラシ" class="seal-character bounce-slow" />
+            </div>
+            <p class="instruction">全20問に挑戦しよう！</p>
+            <button id="start-btn" class="primary-btn">スタート！</button>
+        </div>
+
+        <!-- Game Screen -->
+        <main id="game-screen" class="screen hidden">
+            <div class="game-top-bar">
+                <div class="score-container">スコア: <span id="score">0</span></div>
+                <div class="progress-container">あと: <span id="remaining">20</span>問</div>
+            </div>
+
+            <div class="game-content">
+                <div class="question-container">
+                    <div id="question" class="question-text">
+                        <span id="minuend">10</span> - <span id="subtrahend">3</span> = ?
+                    </div>
+                    <div class="feedback-message" id="feedback"></div>
+                </div>
+
+                <div class="character-side">
+                    <img src="assets/seal.png" alt="かわいいアザラシ" id="game-seal" class="seal-character-game" />
+                </div>
+            </div>
+
+            <div class="input-area">
+                <input type="number" id="answer-input" placeholder="答え" readonly />
+                <!-- Keypad will replace the submit button on mobile/tablet, or just be always visible -->
+                <div class="numeric-keypad">
+                    <div class="keypad-row">
+                        <button class="keypad-btn" data-key="7">7</button>
+                        <button class="keypad-btn" data-key="8">8</button>
+                        <button class="keypad-btn" data-key="9">9</button>
+                    </div>
+                    <div class="keypad-row">
+                        <button class="keypad-btn" data-key="4">4</button>
+                        <button class="keypad-btn" data-key="5">5</button>
+                        <button class="keypad-btn" data-key="6">6</button>
+                    </div>
+                    <div class="keypad-row">
+                        <button class="keypad-btn" data-key="1">1</button>
+                        <button class="keypad-btn" data-key="2">2</button>
+                        <button class="keypad-btn" data-key="3">3</button>
+                    </div>
+                    <div class="keypad-row">
+                        <button class="keypad-btn delete-btn" data-key="C">C</button>
+                        <button class="keypad-btn" data-key="0">0</button>
+                        <button id="submit-btn" class="keypad-btn enter-btn" data-key="Enter">決定</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="screen hidden">
+            <h2>けっかはっぴょう！</h2>
+            <div class="result-details">
+                <div class="result-item">
+                    <span class="label">せいかい</span>
+                    <span id="correct-count" class="count correct-text">0</span>
+                    <span class="unit">もん</span>
+                </div>
+                <div class="result-item">
+                    <span class="label">まちがい</span>
+                    <span id="incorrect-count" class="count incorrect-text">0</span>
+                    <span class="unit">もん</span>
+                </div>
+            </div>
+            <div class="total-score">
+                合計スコア: <span id="final-score">0</span> 点
+            </div>
+            <div class="character-container">
+                <img src="assets/seal.png" alt="かわいいアザラシ" class="seal-character" />
+            </div>
+            <button id="restart-btn" class="primary-btn">もう一度あそぶ</button>
+        </div>
+
+        <footer>
+            がんばれ！未来の計算マスター
+        </footer>
+    </div>
+</body>
+
+</html>
